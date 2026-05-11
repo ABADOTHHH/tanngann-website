@@ -19,9 +19,8 @@
   if (!nav) return;
 
   nav.innerHTML =
-    `<a class="nav-logo" href="${base}index.html">耽翫</a>` +
+    `<a class="nav-logo" href="${base}index.html">耦翰</a>` +
     navLink('home',   'index.html',  'home')   +
     navLink('posts',  'posts.html',  'posts')  +
-    navLink('random', 'random.html', 'random') +
-    `<button id="music-btn" class="nav-btn music-btn">[ ♪ on ]</button>`;
+    navLink('random', 'random.html', 'random');
 })();
