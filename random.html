@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>random // tanngann</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">tanngann</a>
+    <a class="nav-btn" href="index.html">home</a>
+    <a class="nav-btn" href="posts.html">posts</a>
+    <a class="nav-btn active" href="random.html">random</a>
+  </nav>
+
+  <main>
+    <div class="random-wrap">
+      <h1>random</h1>
+      <p id="random-status">// selecting a random post...</p>
+    </div>
+  </main>
+
+  <script src="posts.js"></script>
+  <script>
+    const post = POSTS[Math.floor(Math.random() * POSTS.length)];
+    document.getElementById('random-status').textContent =
+      '// opening: ' + post.title;
+    window.open(post.url, '_blank', 'noopener');
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>posts // tanngann</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">tanngann</a>
+    <a class="nav-btn" href="index.html">home</a>
+    <a class="nav-btn active" href="posts.html">posts</a>
+    <a class="nav-btn" href="random.html">random</a>
+  </nav>
+
+  <main>
+    <h1>posts</h1>
+    <p class="page-subtitle">// all writing, sorted by date</p>
+
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-cat="all">all</button>
+      <button class="filter-btn" data-cat="security">security</button>
+      <button class="filter-btn" data-cat="dev">dev</button>
+      <button class="filter-btn" data-cat="projects">projects</button>
+      <button class="filter-btn" data-cat="tutorials">tutorials</button>
+      <button class="filter-btn" data-cat="thoughts">thoughts</button>
+      <button class="filter-btn" data-cat="misc">misc</button>
+    </div>
+
+    <ul class="post-list" id="post-list"></ul>
+  </main>
+
+  <script src="posts.js"></script>
+  <script>
+    const list = document.getElementById('post-list');
+
+    function renderPosts(posts) {
+      list.innerHTML = '';
+      posts.forEach(post => {
+        const li = document.createElement('li');
+        li.className = 'post-item';
+        li.dataset.cat = post.category;
+        li.innerHTML = `
+          <a class="post-link" href="${post.url}" target="_blank" rel="noopener">${post.title}</a>
+          <span class="post-meta">
+            <span class="post-cat">${post.category}</span>
+            <span class="post-date">${post.date}</span>
+          </span>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    renderPosts(POSTS);
+
+    document.getElementById('filter-bar').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.post-item').forEach(item => {
+        item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
+      });
+    });
+  </script>
+
+</body>
+</html>
