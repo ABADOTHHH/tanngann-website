@@ -27,7 +27,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   min-height: 100vh;
   line-height: 1.7;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 /* ── NAV ─────────────────────────────────────────────── */
@@ -91,7 +91,7 @@ nav {
 /* ── LAYOUT ──────────────────────────────────────────── */
 
 main {
-  max-width: 860px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3.5rem 2rem 5rem;
 }
@@ -153,8 +153,8 @@ p {
 
 .home-avatar {
   flex-shrink: 0;
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 300px;
+  max-height: 300px;
   width: auto;
   height: auto;
   border: 2px solid var(--red);
