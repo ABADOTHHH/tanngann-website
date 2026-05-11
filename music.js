@@ -1,15 +1,7 @@
 (function () {
-  const MUTE_KEY = 'tanngann-muted';
   let ytPlayer = null;
-
-  function isMuted() {
-    // Default: not muted on first visit
-    return localStorage.getItem(MUTE_KEY) === '1';
-  }
-
-  function setMuted(val) {
-    localStorage.setItem(MUTE_KEY, val ? '1' : '0');
-  }
+  let apiLoaded = false;
+  let playing = false;
 
   function extractVideoId(url) {
     const w = url.match(/[?&]v=([^&]+)/);
@@ -17,30 +9,22 @@
     return (w && w[1]) || (s && s[1]) || null;
   }
 
-  function updateBtn() {
-    const btn = document.getElementById('music-btn');
+  function setPlaying(state) {
+    playing = state;
+    const btn = document.getElementById('play-btn');
     if (!btn) return;
-    btn.textContent = isMuted() ? '[ ♪ off ]' : '[ ♪ on ]';
-    btn.classList.toggle('music-muted', isMuted());
-  }
-
-  function toggleMute() {
-    setMuted(!isMuted());
-    if (ytPlayer) {
-      if (isMuted()) {
-        ytPlayer.mute();
-      } else {
-        ytPlayer.unMute();
-        ytPlayer.playVideo();
-      }
+    if (playing) {
+      btn.textContent = '[ ■ stop ]';
+      btn.classList.add('playing');
+    } else {
+      btn.textContent = '[ ▶ play ]';
+      btn.classList.remove('playing');
     }
-    updateBtn();
   }
 
-  // Called by YouTube IFrame API when ready
   window.onYouTubeIframeAPIReady = function () {
     const meta = document.querySelector('meta[name="post-music"]');
-    if (!meta || !meta.content.trim()) return;
+    if (!meta) return;
     const videoId = extractVideoId(meta.content.trim());
     if (!videoId) return;
 
@@ -51,32 +35,49 @@
 
     ytPlayer = new YT.Player('yt-player', {
       videoId,
-      playerVars: { autoplay: 1, loop: 1, playlist: videoId },
+      playerVars: { autoplay: 0, loop: 1, playlist: videoId },
       events: {
         onReady: function (e) {
-          if (isMuted()) {
-            e.target.mute();
-          } else {
-            e.target.unMute();
-          }
           e.target.playVideo();
+          setPlaying(true);
         },
       },
     });
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
-    updateBtn();
-
-    const btn = document.getElementById('music-btn');
-    if (btn) btn.addEventListener('click', toggleMute);
-
-    // Load YouTube IFrame API only on pages that have a music link
-    const meta = document.querySelector('meta[name="post-music"]');
-    if (meta && meta.content.trim()) {
-      const script = document.createElement('script');
-      script.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(script);
+  function handleClick() {
+    if (!ytPlayer) {
+      if (!apiLoaded) {
+        apiLoaded = true;
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(script);
+      }
+      return;
     }
+    if (playing) {
+      ytPlayer.stopVideo();
+      setPlaying(false);
+    } else {
+      ytPlayer.playVideo();
+      setPlaying(true);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const meta = document.querySelector('meta[name="post-music"]');
+    if (!meta || !meta.content.trim()) return;
+
+    const header = document.querySelector('.post-header');
+    if (!header) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'music-player';
+    const btn = document.createElement('button');
+    btn.id = 'play-btn';
+    btn.textContent = '[ ▶ play ]';
+    btn.addEventListener('click', handleClick);
+    wrapper.appendChild(btn);
+    header.insertAdjacentElement('afterend', wrapper);
   });
 })();

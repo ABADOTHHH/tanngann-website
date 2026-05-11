@@ -30,7 +30,7 @@ body {
   font-size: 18px;
 }
 
-/* ── NAV ─────────────────────────────────────────────── */
+/* ── NAV ─────────────────────────────────────────────────── */
 
 nav {
   position: sticky;
@@ -88,21 +88,32 @@ nav {
   border-color: var(--accent);
 }
 
-.music-btn {
-  margin-left: 1rem;
-  border-color: var(--text-dim);
-  color: var(--text-dim);
+.music-player {
+  margin-bottom: 2rem;
 }
 
-.music-btn:hover {
+#play-btn {
   background: transparent;
-  border-color: var(--text);
-  color: var(--text);
+  border: 1px solid var(--red);
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
 }
 
-.music-btn.music-muted {
-  border-color: var(--border);
-  color: var(--border);
+#play-btn:hover {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red-bright);
+}
+
+#play-btn.playing {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ── LAYOUT ──────────────────────────────────────────── */
@@ -113,7 +124,7 @@ main {
   padding: 3.5rem 2rem 5rem;
 }
 
-/* ── TYPOGRAPHY ──────────────────────────────────────── */
+/* ── TYPOGRAPHY ────────────────────────────────────────── */
 
 h1 {
   font-size: 1.6rem;
@@ -159,7 +170,7 @@ p {
   margin: 2.5rem 0;
 }
 
-/* ── HOME PAGE ───────────────────────────────────────── */
+/* ── HOME PAGE ─────────────────────────────────────────── */
 
 .home-hero {
   display: flex;
@@ -217,7 +228,7 @@ p {
   50% { opacity: 0; }
 }
 
-/* ── POSTS PAGE ──────────────────────────────────────── */
+/* ── POSTS PAGE ────────────────────────────────────────── */
 
 .filter-bar {
   display: flex;
@@ -307,7 +318,7 @@ p {
   color: var(--text-dim);
 }
 
-/* ── RANDOM PAGE ─────────────────────────────────────── */
+/* ── RANDOM PAGE ───────────────────────────────────────── */
 
 .random-wrap {
   text-align: center;
@@ -320,7 +331,7 @@ p {
   letter-spacing: 1px;
 }
 
-/* ── SCROLLBAR ───────────────────────────────────────── */
+/* ── SCROLLBAR ────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
   width: 6px;
