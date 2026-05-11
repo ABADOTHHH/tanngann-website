@@ -88,6 +88,23 @@ nav {
   border-color: var(--accent);
 }
 
+.music-btn {
+  margin-left: 1rem;
+  border-color: var(--text-dim);
+  color: var(--text-dim);
+}
+
+.music-btn:hover {
+  background: transparent;
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.music-btn.music-muted {
+  border-color: var(--border);
+  color: var(--border);
+}
+
 /* ── LAYOUT ──────────────────────────────────────────── */
 
 main {
