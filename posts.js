@@ -13,6 +13,5 @@ const POSTS = [
   { title: "My First CTF: Lessons Learned", date: "2025-07-22", category: "misc", url: "posts/my-first-ctf-lessons-learned.html" },
   { title: "Building a Minimal Static Site Generator", date: "2025-07-10", category: "dev", url: "posts/building-a-minimal-static-site-generator.html" },
   { title: "An Introduction to Network Packet Analysis", date: "2025-06-28", category: "security", url: "posts/an-introduction-to-network-packet-analysis.html" },
-  { title: "Open Source Tools I Actually Use", date: "2025-06-12", category: "misc", url: "posts/open-source-tools-i-actually-use.html" },
-  { title: "Self-Hosting Everything: A Year Later", date: "2025-05-30", category: "projects", url: "posts/self-hosting-everything-a-year-later.html" }
+  { title: "Open Source Tools I Actually Use", date: "2025-06-12", category: "misc", url: "posts/open-source-tools-i-actually-use.html" }
 ];

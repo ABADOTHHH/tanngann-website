@@ -18,10 +18,10 @@ from pathlib import Path
 
 def extract_meta(content, name):
     match = re.search(
-        rf'<meta\s+name=["\']post-{name}["\']\s+content=["\']([^"\']+)["\']',
+        rf'<meta\s+name=(["\'])post-{name}\1\s+content=(["\'])(.*?)\2',
         content,
     )
-    return match.group(1) if match else None
+    return match.group(3) if match else None
 
 
 posts_dir = Path(__file__).parent / "posts"
