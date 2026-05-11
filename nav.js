@@ -19,7 +19,7 @@
   if (!nav) return;
 
   nav.innerHTML =
-    `<a class="nav-logo" href="${base}index.html">耖翰</a>` +
+    `<a class="nav-logo" href="${base}index.html">耽翫</a>` +
     navLink('home',   'index.html',  'home')   +
     navLink('posts',  'posts.html',  'posts')  +
     navLink('random', 'random.html', 'random') +
