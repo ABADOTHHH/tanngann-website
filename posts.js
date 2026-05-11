@@ -2,7 +2,7 @@
 // To add a post: create an HTML file in posts/ with post-title, post-date,
 // and post-category <meta> tags, then run: python build.py
 const POSTS = [
-  { title: "First post, let", date: "2026-05-11", category: "projects", url: "posts/first-post-lets-see-if-this-works.html" },
+  { title: "First post, let's see if this works :D", date: "2026-05-11", category: "projects", url: "posts/first-post-lets-see-if-this-works.html" },
   { title: "Breaking Down Buffer Overflows", date: "2025-11-03", category: "security", url: "posts/breaking-down-buffer-overflows.html" },
   { title: "Setting Up a Home Lab on a Budget", date: "2025-10-21", category: "projects", url: "posts/setting-up-a-home-lab-on-a-budget.html" },
   { title: "Writing a Simple Port Scanner in Python", date: "2025-10-08", category: "tutorials", url: "posts/writing-a-simple-port-scanner-in-python.html" },
