@@ -153,19 +153,12 @@ p {
 
 .home-avatar {
   flex-shrink: 0;
-  width: 160px;
-  height: 160px;
+  max-width: 250px;
+  max-height: 250px;
+  width: auto;
+  height: auto;
   border: 2px solid var(--red);
-  background: var(--red-dim);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--red);
-  font-size: 0.7rem;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 1rem;
-  line-height: 1.6;
+  display: block;
 }
 
 .home-bio {
