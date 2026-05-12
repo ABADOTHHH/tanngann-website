@@ -14,15 +14,7 @@
     <h1>posts</h1>
     <p class="page-subtitle">// all writing, sorted by date</p>
 
-    <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" data-cat="all">all</button>
-      <button class="filter-btn" data-cat="security">security</button>
-      <button class="filter-btn" data-cat="dev">dev</button>
-      <button class="filter-btn" data-cat="projects">projects</button>
-      <button class="filter-btn" data-cat="tutorials">tutorials</button>
-      <button class="filter-btn" data-cat="thoughts">thoughts</button>
-      <button class="filter-btn" data-cat="misc">misc</button>
-    </div>
+    <div class="filter-bar" id="filter-bar"></div>
 
     <ul class="post-list" id="post-list"></ul>
   </main>
@@ -58,13 +50,23 @@
       });
     }
 
+    const filterBar = document.getElementById('filter-bar');
+    const categories = ['all', ...new Set(POSTS.map(p => p.category))];
+    categories.forEach((cat, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn' + (i === 0 ? ' active' : '');
+      btn.dataset.cat = cat;
+      btn.textContent = cat;
+      filterBar.appendChild(btn);
+    });
+
     renderPosts(POSTS);
 
-    document.getElementById('filter-bar').addEventListener('click', e => {
+    filterBar.addEventListener('click', e => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
 
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const cat = btn.dataset.cat;
