@@ -39,4 +39,17 @@
     `<button class="nav-btn" id="nav-random">random</button>`;
 
   document.getElementById('nav-random').addEventListener('click', openRandom);
+
+  if (inSubdir) {
+    const title    = (document.querySelector('meta[name="post-title"]')    || {}).content;
+    const date     = (document.querySelector('meta[name="post-date"]')     || {}).content;
+    const category = (document.querySelector('meta[name="post-category"]') || {}).content;
+    if (title) {
+      const header = document.createElement('div');
+      header.className = 'post-header';
+      header.innerHTML = `<h1>${title}</h1><p class="meta">${date}&nbsp;//&nbsp;${category}</p>`;
+      const body = document.querySelector('.post-body');
+      if (body) body.insertAdjacentElement('beforebegin', header);
+    }
+  }
 })();

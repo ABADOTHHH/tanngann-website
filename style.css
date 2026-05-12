@@ -325,6 +325,16 @@ p {
   color: var(--text-dim);
 }
 
+/* ── POST PAGE ─────────────────────────────────────────── */
+
+.post-header { margin-bottom: 2.5rem; }
+.post-header h1 { font-size: 1.3rem; }
+.post-header .meta { color: var(--text-dim); font-size: 0.78rem; letter-spacing: 1px; margin-top: 0.4rem; }
+.post-body p { margin-bottom: 1.2rem; }
+.back-link { display: inline-block; margin-bottom: 2.5rem; color: var(--text-dim); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; }
+.back-link:hover { color: var(--accent); }
+.back-link::before { content: '<- '; color: var(--red); }
+
 /* ── RANDOM PAGE ───────────────────────────────────────── */
 
 .random-wrap {
