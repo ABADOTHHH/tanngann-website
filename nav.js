@@ -33,7 +33,7 @@
   if (!nav) return;
 
   nav.innerHTML =
-    `<a class="nav-logo" href="${base}index.html"><img src="${base}pictures/favicon/favicon-32x32.png" alt="耽翫" /></a>` +
+    `<a class="nav-logo" href="${base}index.html"><img src="${base}pictures/favicon/favicon.svg" alt="耽翫" /></a>` +
     navLink('home',  'index.html', 'home')  +
     navLink('posts', 'posts.html', 'posts') +
     `<button class="nav-btn" id="nav-random">random</button>`;
