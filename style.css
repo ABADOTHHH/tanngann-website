@@ -188,8 +188,8 @@ p {
 
 .home-avatar {
   flex-shrink: 0;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 340px;
+  max-height: 340px;
   width: auto;
   height: auto;
   border: 2px solid var(--red);
