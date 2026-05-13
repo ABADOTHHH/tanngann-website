@@ -173,7 +173,7 @@ p {
 
 .divider {
   border: none;
-  border-top: 1px solid var(--red);
+  border-top: 1px solid var(--border);
   margin: 2.5rem 0;
 }
 
