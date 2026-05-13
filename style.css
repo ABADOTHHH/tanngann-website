@@ -9,11 +9,11 @@
   --bg-card:    #0a0a0a;
   --bg-nav:     #000000;
   --text:       #ffffff;
-  --text-dim:   #888;
+  --text-dim:   #dbdbdb;
   --red:        #cc2200;
   --red-bright: #ff3311;
-  --red-dim:    #1a0500;
-  --border:     #2a0800;
+  --red-dim:    #6c1400;
+  --border:     #6c1500;
   --accent:     #ff4422;
 }
 
@@ -23,7 +23,7 @@
 }
 
 a:link    { color: #7fd7ff; }
-a:visited { color: #ffafff; }
+a:visited { color: #ff4422; }
 a:active  { color: #ff0000; }
 
 html {
@@ -173,7 +173,7 @@ p {
 
 .divider {
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--red);
   margin: 2.5rem 0;
 }
 
