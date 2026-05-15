@@ -20,6 +20,7 @@
 ::selection {
   background: #ff0000;
   color: #ffffff;
+  text-shadow: 0 0 8px #000, 0 0 16px #000;
 }
 
 a:link    { color: #7fd7ff; }
