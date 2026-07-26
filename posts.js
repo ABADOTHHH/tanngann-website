@@ -5,6 +5,5 @@ const POSTS = [
   { title: "About me", date: "2026-05-12", category: "ABADOTH", url: "posts/about-me.html" },
   { title: "Tools for language learning", date: "2026-05-12", category: "language learning", url: "posts/tools-for-language-learning.html" },
   { title: "Websites for language learning", date: "2026-05-12", category: "language learning", url: "posts/websites-for-language-learning.html" },
-  { title: "What is the future of languages ?", date: "2026-05-12", category: "language learning", url: "posts/what-is-the-future-of-languages.html" },
-  { title: "First post, let's see if this works :D", date: "2026-05-11", category: "projects", url: "posts/first-post-lets-see-if-this-works.html" }
+  { title: "What is the future of languages ?", date: "2026-05-12", category: "language learning", url: "posts/what-is-the-future-of-languages.html" }
 ];
