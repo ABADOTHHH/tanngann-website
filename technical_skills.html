@@ -16,8 +16,6 @@
 
   <main class="wide">
     <h1>technical skills</h1>
-    <p class="page-subtitle">// self-assessed, honest, and permanently out of date</p>
-
     <div class="skills-wrap">
       <table class="skills-table" id="skills-table">
         <thead>
@@ -25,11 +23,6 @@
         </thead>
         <tbody id="skills-body"></tbody>
       </table>
-    </div>
-
-    <div class="terminal-block">
-      <div class="line">Levels are relative to what the work actually demands, not to the field as a whole.</div>
-      <div class="line">Anything not listed here, assume level 0.</div>
     </div>
   </main>
 
@@ -45,15 +38,27 @@
                   { section: 'Name' }            a full-width heading row
   -->
   <script>
-    const LEVELS = ['aware', 'basic', 'working', 'proficient', 'advanced'];
+    const LEVELS = ["Basic : I've covered it in class", "Rusty : I've used it, I'd need a day to get back up to speed", "Proficient : I can explain this to someone else and troubleshoot it"];
 
     const SKILLS = [
-      { section: 'languages' },
-      { name: 'Python',            level: 4 },
-      { name: 'JavaScript',        level: 3 },
-      { name: 'HTML / CSS',        level: 4 },
-      { name: 'Bash',              level: 3 },
-      { name: 'C',                 level: 2 },
+      { section: '### Cybersecurity ###' },
+      { section: 'Cryptography' },
+      { name: 'openssl',            level: 1 },
+      { name: 'hashcat',        level: 1 },
+      { section: 'Pentest' },
+      { name: 'nmap',        level: 1 },
+      { name: 'metasploit',              level: 1 },
+      { name: 'Burp Suite',                 level: 1 },
+      { name: 'ffuf',        level: 1 },
+      { name: 'VirusTotal',              level: 2 },
+      { name: 'GTFOBins',                 level: 2 },
+      { section: 'Reverse engineering' },
+      { name: 'IDA',        level: 1 },
+      { name: 'x86 ASM',              level: 1 },
+      { section: 'Forensic analysis' },
+      { name: 'Volatility',                 level: 1 },
+      { name: 'Autopsy',                 level: 1 },
+      { name: 'dd',                 level: 1 },
 
       { section: 'systems' },
       { name: 'Linux',             level: 4 },
