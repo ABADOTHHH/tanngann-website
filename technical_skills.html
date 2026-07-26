@@ -35,13 +35,16 @@
                 number of lines automatically.
                   { name: 'Thing',  level: 3 }   a skill row, filled up to `level`
                                                  (0 = empty, LEVELS.length = full)
-                  { section: 'Name' }            a full-width heading row
+                  { family: 'Name' }            a full-width family heading row
+                                                 (the top tier, rendered as ### Name ###)
+                  { section: 'Name' }           a full-width section heading row
+                                                 (nested inside a family)
   -->
   <script>
     const LEVELS = ["Basic : I've covered it in class", "Rusty : I've used it, I'd need a day to get back up to speed", "Proficient : I can explain this to someone else and troubleshoot it"];
 
     const SKILLS = [
-      { section: '### Cybersecurity #########' },
+      { family: 'Cybersecurity' },
       { section: 'Cryptography' },
       { name: 'openssl',            level: 2 },
       { name: 'hashcat',        level: 2 },
@@ -68,7 +71,7 @@
       { name: 'OIDC',           level: 1 },
       { name: 'ZTNA',           level: 1 },
 
-      { section: '### Systems #########' },
+      { family: 'Systems' },
       { section: 'Linux admin' },
       { name: 'GNU core utils',             level: 3 },
       { name: 'Package management (apt, pacman)',        level: 3 },
@@ -102,7 +105,7 @@
       { name: 'SQLite',             level: 2 },
       { name: 'SQL',        level: 2 },
 
-      { section: '### Networking #########' },
+      { family: 'Networking' },
       { section: 'Network troubleshooting' },
       { name: 'Wireshark',            level: 2 },
       { name: 'Nmap',              level: 2 },
@@ -124,6 +127,9 @@
       LEVELS.map((l, i) => `<th>${String(i + 1).padStart(2, '0')} ${l}</th>`).join('');
 
     body.innerHTML = SKILLS.map(row => {
+      if (row.family) {
+        return `<tr class="family"><td colspan="${LEVELS.length + 1}">${row.family}</td></tr>`;
+      }
       if (row.section) {
         return `<tr class="section"><td colspan="${LEVELS.length + 1}">${row.section}</td></tr>`;
       }

@@ -398,6 +398,27 @@ main.wide {
   color: var(--accent);
 }
 
+.skills-table tr.family td {
+  background: var(--red-dim);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  height: 46px;
+  border-top: 2px solid var(--red-bright);
+}
+
+.skills-table tr.family td::before {
+  content: '### ';
+  color: var(--red-bright);
+}
+
+.skills-table tr.family td::after {
+  content: ' ###';
+  color: var(--red-bright);
+}
+
 .skills-table tr.section td {
   background: var(--bg-card);
   color: var(--red-bright);
