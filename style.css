@@ -343,24 +343,32 @@ main.wide {
 }
 
 .skills-wrap {
-  overflow-x: auto;
+  overflow: auto;
+  max-height: calc(100vh - 12rem);
   margin-bottom: 2.5rem;
 }
 
 .skills-table {
   width: 1800px;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-left: 1px solid var(--border);
   table-layout: fixed;
 }
 
 .skills-table th,
 .skills-table td {
-  border: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   height: 38px;
   padding: 0 14px;
 }
 
 .skills-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-top: 1px solid var(--border);
   background: var(--bg-card);
   color: var(--accent);
   font-size: 0.68rem;
