@@ -336,6 +336,80 @@ p {
 .back-link:hover { color: var(--accent); }
 .back-link::before { content: '<- '; color: var(--red); }
 
+/* ── TECHNICAL SKILLS PAGE ─────────────────────────────── */
+
+main.wide {
+  max-width: 1864px;
+}
+
+.skills-wrap {
+  overflow-x: auto;
+  margin-bottom: 2.5rem;
+}
+
+.skills-table {
+  width: 1800px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.skills-table th,
+.skills-table td {
+  border: 1px solid var(--border);
+  height: 38px;
+  padding: 0 14px;
+}
+
+.skills-table thead th {
+  background: var(--bg-card);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skills-table .skill-name {
+  width: 380px;
+  text-align: left;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.skills-table thead .skill-name {
+  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+}
+
+.skills-table tbody tr:hover .skill-name {
+  color: var(--accent);
+}
+
+.skills-table tr.section td {
+  background: var(--bg-card);
+  color: var(--red-bright);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.skills-table tr.section td::before {
+  content: '$ ';
+  color: var(--red);
+}
+
+.skills-table .cell.on {
+  background: var(--red-dim);
+}
+
+.skills-table .cell.on.peak {
+  background: var(--red);
+}
+
 /* ── RANDOM PAGE ───────────────────────────────────────── */
 
 .random-wrap {

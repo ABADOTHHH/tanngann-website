@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>technical skills // 耽翫</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="pictures/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="pictures/favicon/favicon.ico" sizes="32x32" />
+  <link rel="icon" href="pictures/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="pictures/favicon/apple-touch-icon.png" />
+</head>
+<body>
+
+  <nav id="nav"></nav>
+
+  <main class="wide">
+    <h1>technical skills</h1>
+    <p class="page-subtitle">// self-assessed, honest, and permanently out of date</p>
+
+    <div class="skills-wrap">
+      <table class="skills-table" id="skills-table">
+        <thead>
+          <tr id="skills-head"></tr>
+        </thead>
+        <tbody id="skills-body"></tbody>
+      </table>
+    </div>
+
+    <div class="terminal-block">
+      <div class="line">Levels are relative to what the work actually demands, not to the field as a whole.</div>
+      <div class="line">Anything not listed here, assume level 0.</div>
+    </div>
+  </main>
+
+  <!--
+    To edit this page, only touch the two arrays below.
+
+      LEVELS  = the X axis. Column headers, left to right, weakest to strongest.
+
+      SKILLS  = the Y axis. One entry per line; the table height follows the
+                number of lines automatically.
+                  { name: 'Thing',  level: 3 }   a skill row, filled up to `level`
+                                                 (0 = empty, LEVELS.length = full)
+                  { section: 'Name' }            a full-width heading row
+  -->
+  <script>
+    const LEVELS = ['aware', 'basic', 'working', 'proficient', 'advanced'];
+
+    const SKILLS = [
+      { section: 'languages' },
+      { name: 'Python',            level: 4 },
+      { name: 'JavaScript',        level: 3 },
+      { name: 'HTML / CSS',        level: 4 },
+      { name: 'Bash',              level: 3 },
+      { name: 'C',                 level: 2 },
+
+      { section: 'systems' },
+      { name: 'Linux',             level: 4 },
+      { name: 'Git',               level: 4 },
+      { name: 'Networking',        level: 2 },
+      { name: 'Self-hosting',      level: 3 },
+
+      { section: 'tools' },
+      { name: 'Neovim',            level: 4 },
+      { name: 'Anki',              level: 5 },
+      { name: 'Audacity',          level: 3 },
+      { name: 'FFmpeg',            level: 2 }
+    ];
+
+    const head = document.getElementById('skills-head');
+    const body = document.getElementById('skills-body');
+
+    head.innerHTML =
+      '<th class="skill-name">skill</th>' +
+      LEVELS.map((l, i) => `<th>${String(i + 1).padStart(2, '0')} ${l}</th>`).join('');
+
+    body.innerHTML = SKILLS.map(row => {
+      if (row.section) {
+        return `<tr class="section"><td colspan="${LEVELS.length + 1}">${row.section}</td></tr>`;
+      }
+      const cells = LEVELS.map((_, i) => {
+        if (i + 1 < row.level)  return '<td class="cell on"></td>';
+        if (i + 1 === row.level) return '<td class="cell on peak"></td>';
+        return '<td class="cell"></td>';
+      }).join('');
+      return `<tr><td class="skill-name">${row.name}</td>${cells}</tr>`;
+    }).join('');
+  </script>
+
+  <script src="nav.js"></script>
+  <script src="music.js"></script>
+</body>
+</html>
