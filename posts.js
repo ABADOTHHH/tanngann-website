@@ -2,16 +2,9 @@
 // To add a post: create an HTML file in posts/ with post-title, post-date,
 // and post-category <meta> tags, then run: python build.py
 const POSTS = [
-  { title: "First post, let's see if this works :D", date: "2026-05-11", category: "projects", url: "posts/first-post-lets-see-if-this-works.html" },
-  { title: "Breaking Down Buffer Overflows", date: "2025-11-03", category: "security", url: "posts/breaking-down-buffer-overflows.html" },
-  { title: "Setting Up a Home Lab on a Budget", date: "2025-10-21", category: "projects", url: "posts/setting-up-a-home-lab-on-a-budget.html" },
-  { title: "Writing a Simple Port Scanner in Python", date: "2025-10-08", category: "tutorials", url: "posts/writing-a-simple-port-scanner-in-python.html" },
-  { title: "Why I Switched to Neovim", date: "2025-09-15", category: "dev", url: "posts/why-i-switched-to-neovim.html" },
-  { title: "The Quiet Art of Reverse Engineering", date: "2025-09-02", category: "security", url: "posts/the-quiet-art-of-reverse-engineering.html" },
-  { title: "Thoughts on Digital Privacy in 2025", date: "2025-08-18", category: "thoughts", url: "posts/thoughts-on-digital-privacy-in-2025.html" },
-  { title: "Automating Recon with Bash Scripts", date: "2025-08-04", category: "tutorials", url: "posts/automating-recon-with-bash-scripts.html" },
-  { title: "My First CTF: Lessons Learned", date: "2025-07-22", category: "misc", url: "posts/my-first-ctf-lessons-learned.html" },
-  { title: "Building a Minimal Static Site Generator", date: "2025-07-10", category: "dev", url: "posts/building-a-minimal-static-site-generator.html" },
-  { title: "An Introduction to Network Packet Analysis", date: "2025-06-28", category: "security", url: "posts/an-introduction-to-network-packet-analysis.html" },
-  { title: "Open Source Tools I Actually Use", date: "2025-06-12", category: "misc", url: "posts/open-source-tools-i-actually-use.html" }
+  { title: "About me", date: "2026-05-12", category: "ABADOTH", url: "posts/about-me.html" },
+  { title: "Tools for language learning", date: "2026-05-12", category: "language learning", url: "posts/tools-for-language-learning.html" },
+  { title: "Websites for language learning", date: "2026-05-12", category: "language learning", url: "posts/websites-for-language-learning.html" },
+  { title: "What is the future of languages ?", date: "2026-05-12", category: "language learning", url: "posts/what-is-the-future-of-languages.html" },
+  { title: "First post, let's see if this works :D", date: "2026-05-11", category: "projects", url: "posts/first-post-lets-see-if-this-works.html" }
 ];
