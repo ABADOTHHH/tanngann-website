@@ -3,7 +3,7 @@
 // and post-category <meta> tags, then run: python build.py
 const POSTS = [
   { title: "Youtube for language learning", date: "2026-07-28", category: "language learning", url: "posts/youtube-for-language-learning.html" },
-  { title: "About me", date: "2026-05-12", category: "ABADOTH", url: "posts/about-me.html" },
+  { title: "About me", date: "2026-05-11", category: "ABADOTH", url: "posts/about-me.html" },
   { title: "Tools for language learning", date: "2026-05-12", category: "language learning", url: "posts/tools-for-language-learning.html" },
   { title: "Websites for language learning", date: "2026-05-12", category: "language learning", url: "posts/websites-for-language-learning.html" },
   { title: "What is the future of languages ?", date: "2026-05-12", category: "language learning", url: "posts/what-is-the-future-of-languages.html" }
