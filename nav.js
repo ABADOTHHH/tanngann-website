@@ -17,7 +17,7 @@
   function openRandom() {
     function pick() {
       const post = POSTS[Math.floor(Math.random() * POSTS.length)];
-      window.open(base + post.url, '_blank', 'noopener');
+      window.location.href = base + post.url;
     }
     if (typeof POSTS !== 'undefined') {
       pick();
